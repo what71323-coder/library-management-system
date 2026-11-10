@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/app.js"></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <h1>Library Management System</h1>
+            <p>Manage books, issue books, and return books easily.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Statistics -->
+        <section class="stats">
+            <div class="stat-card">
+                <span>Total Books</span>
+                <h2 id="totalBooks">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Available Books</span>
+                <h2 id="availableBooks">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Issued Books</span>
+                <h2 id="issuedBooks">0</h2>
+            </div>
+        </section>
+
+        <!-- Student Information -->
+        <section class="card">
+            <h2>Student Information</h2>
+
+            <form id="studentForm" class="form-grid">
+                <div class="form-group">
+                    <label for="studentName">Student Name</label>
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Enter student name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="studentEmail">Student Email</label>
+                    <input
+                        type="email"
+                        id="studentEmail"
+                        placeholder="Enter student email"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Register Student
+                </button>
+            </form>
+
+            <p id="studentInfo" class="student-info">
+                Please register a student to issue books.
+            </p>
+        </section>
+
+        <!-- Add Book -->
+        <section class="card">
+            <h2>Add New Book</h2>
+
+            <form id="bookForm" class="form-grid">
+                <div class="form-group">
+                    <label for="bookTitle">Book Title</label>
+                    <input
+                        type="text"
+                        id="bookTitle"
+                        placeholder="Enter book title"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="bookAuthor">Author</label>
+                    <input
+                        type="text"
+                        id="bookAuthor"
+                        placeholder="Enter author name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="bookCategory">Category</label>
+                    <select id="bookCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="Programming">Programming</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Database">Database</option>
+                        <option value="Networking">Networking</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Add Book
+                </button>
+            </form>
+        </section>
+
+        <!-- Search and Filter -->
+        <section class="card">
+            <h2>Book Collection</h2>
+
+            <div class="search-section">
+                <div class="form-group">
+                    <label for="searchInput">Search Books</label>
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search by title or author..."
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="categoryFilter">Filter Category</label>
+                    <select id="categoryFilter">
+                        <option value="All">All Categories</option>
+                        <option value="Programming">Programming</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Database">Database</option>
+                        <option value="Networking">Networking</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="message" role="status" aria-live="polite"></div>
+
+            <div id="bookContainer" class="book-grid"></div>
+
+            <p id="emptyMessage" class="empty-message" hidden>
+                No books found.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Library Management System | JavaScript OOP Project</p>
+    </footer>
+
+</body>
+</html>
